@@ -355,7 +355,7 @@ class ServerlessAppsyncPlugin {
           },
         },
       },
-      ...config.logConfig && config.logConfig.level && {
+      ...config.logConfig && config.logConfig.level && !config.logConfig.groupExists && {
         [`${logicalIdGraphQLApi}LogGroup`]: {
           Type: 'AWS::Logs::LogGroup',
           Properties: {
